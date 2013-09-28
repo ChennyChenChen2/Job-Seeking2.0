@@ -14,61 +14,42 @@ var user_location = "sao paulo";
 /* When home page is first loaded, shift navbar to the left, hide the text, and
 display the item's information */
 function shiftPageDown() {
-	
-	var nav = document.getElementById("nav");
-	var text = document.getElementById("text");
-	var info = document.getElementById("info");
+	$("#middle_container").toggle();
+	fullJobSearch();
+}
 
-	var details = document.getElementById("details");
-	
-	
-	//nav.style.marginTop==="70%"; 
-		//text.style.left= "-30%";
-		//nav.style.marginLeft= "0%";
-		//info.style.left= "40%";
-		//displayNewData(source);
-	
-
+function fullJobSearch(){
+	var query = document.getElementById("job_search").value
+	job_search(query, user_location, 1);
+	$("#all_jobtitle").text(query);
 }
 
 function shiftPageInit(source) {
-	
+
+	if( $("#middle_container").css("display") == 'block' ){
+		$("#middle_container").toggle();
+	}
+
 	var nav = document.getElementById("nav");
 	var text = document.getElementById("text");
 	var info = document.getElementById("info");
 
 	var details = document.getElementById("details");
-if (source == "Back"){
-	if(text.style.left==="-30%") {
-		text.style.left= "10%";
-		nav.style.marginLeft= "70%";
-		info.style.left= "120%";
-	}
-	else {
-		console.log("back");
-	}
-
-}
-else{	
-	if(nav.style.marginLeft==="70%") {
-		text.style.left= "-30%";
-		nav.style.marginLeft= "0%";
-		info.style.left= "40%";
+	
+	$("#text").toggle();
+		info.style.left= "20%";
 		displayNewData(source);
-	}
-
-	else {
-		shiftChangeCategory(source);	
-	}
-}
-
 }
 
 /* When different category selected, change margin between elements in the
 	navbar */
 function shiftChangeCategory(source) {
-	info.style.left="-50%";
-	details.style.left= "40%";
+
+	$("#info").toggle();
+	var details  = document.getElementById("details");
+
+	//info.style.left="-50%";
+	details.style.left= "5%";
 	displayJobData(source);
 
 }
@@ -113,6 +94,7 @@ function displayNewData(source) {
 function displayJobData(job_index){
 
 	var job_picture = document.getElementById("job_picture");
+	var job_title 	= document.getElementById("job_title");
 
 	switch(job_sector){
 		case job_sector_names[0]: // Agriculture
@@ -133,19 +115,23 @@ function displayJobData(job_index){
 			switch(job_index){
 				case 1: // Waiter
 					job_picture.src = 'Images/waiter.jpg';
-					job_search("garcom", user_location);
+					$("#job_title").text("Garcom");
+					job_search("garcom", user_location, 0);
 					break;
 				case 2: // Chef
 					job_picture.src = 'Images/chef.jpg';
-					job_search("Cozinheiro", user_location);
+					$("#job_title").text("Cozinheiro");
+					job_search("Cozinheiro", user_location, 0);
 					break;
 				case 3: // Kitchen Assistant
 					job_picture.src = 'Images/assistantchef.jpg';
-					job_search("Auxiliar Cozinha", user_location);
+					$("#job_title").text("Auxiliar Cozinha");
+					job_search("Auxiliar Cozinha", user_location, 0);
 					break;
 				case 4: // Restaurant Manager
 					job_picture.src = 'Images/restaurantmanager.jpg';
-					job_search("Gerente Restaurante", user_location);
+					$("#job_title").text("Gerente Restaurante");
+					job_search("Gerente Restaurante", user_location, 0);
 					break;
 			}
 			break;
@@ -154,12 +140,20 @@ function displayJobData(job_index){
 
 
 
-function jobkey_search(jobkey, index){
+function jobkey_search(jobkey, index, dataset){
 
+if(dataset == 0){
+	console.log("standard dataset");
     var job_title =       ["#jobtitle1", "#jobtitle2", "#jobtitle3"];
     var job_description = ["#jobdescription1", "#jobdescription2", "#jobdescription3"];
     var company =         ["#company1", "#company2", "#company3"];
-
+}
+else if (dataset == 1){
+	console.log("all job dataset");
+	var job_title =       ["#all_jobtitle1", "#all_jobtitle2", "#all_jobtitle3"];
+    var job_description = ["#all_jobdescription1", "#all_jobdescription2", "#all_jobdescription3"];
+    var company =         ["#all_company1", "#all_company2", "#all_company3"];
+}
 
   // query individual job result
     $.getJSON( "http://api.indeed.com/ads/apigetjobs?publisher=1392687517264254&format=json&jobkeys="+jobkey+"&v=2", function(data){
@@ -174,15 +168,16 @@ function jobkey_search(jobkey, index){
     });
   }
 
-  function job_search(keyword, location){
+  function job_search(keyword, location, dataset){
 
   // query general database 
    $.getJSON( "http://api.indeed.com/ads/apisearch?publisher=1392687517264254&format=json&co=br&limit=30&l="+location+"&q="+keyword+"&v=2", function(data){
 
     // query individual job result, get job-specific data
     for (var i = 0; i < jobs_per_page; i++) {
-      jobkey_search(data.results[i].jobkey, i);
+      jobkey_search(data.results[i].jobkey, i, dataset);
     };
     
    });
   }
+
