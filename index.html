@@ -45,10 +45,13 @@
 			    <h1 style="font-size:350%;font-weight:bold;opacity:0.2">PERFEITO</h1>
 			    <h1 style="font-size:350%;font-weight:normal;opacity:0.2">PARA SUAS</h1>
 			    <h1 style="font-size:350%;font-weight:normal;opacity:0.2">HABILIDADES</h1>
+			    <img style="height:10%;width:10%;position:absolute;margin-left:10%;" src="./Images/Endless Mobile.jpg">
+          <br>
 			    <br>
-			    <br>
+          <br>
 			    <h2 style="opacity:0.2">Clique na imagem</h2>
 			    <h2 style="opacity:0.2">para começar &#187;</h2>
+
 			</div>
 		</div>
 		<div class="span4">
@@ -215,7 +218,13 @@
 
         <div class="span5">
             <h1 style="display:inline-block; margin-right:4%;"><a href="#" id="jobtitle1" class="job_title">Job Title</a></h1>
-            <button style="display:inline-block;" class="btn btn-danger" onclick="displayPopup()">Preview</button>
+            <a href="#" 
+               class="btn btn-danger" 
+               id="testing" 
+               data-toggle="popover" 
+               title="This is the job search page:" 
+               data-content="<img style='height:300px;width:300px;' src='Images/pasture.jpg'>
+               <p>This is the home page.</p>">Preview</a>
             <p id="company1" class="job_text">Company</p>
             <p id="jobdescription1" class="job_text">Job Description</p>
 
@@ -246,20 +255,20 @@
    <!-- <script src = "spin.js"></script> -->
    <script src="./index.js"></script>
    <script src="./popup.js"></script>
-   <script src="./bootstrap/js/jquery.js"></script>
-   <script src="./bootstrap/js/bootstrap-transition.js"></script>
-   <script src="./bootstrap/js/bootstrap-alert.js"></script>
-   <script src="./bootstrap/js/bootstrap-modal.js"></script>
-   <script src="./bootstrap/js/bootstrap-dropdown.js"></script>
-   <script src="./bootstrap/js/bootstrap-scrollspy.js"></script>
-   <script src="./bootstrap/js/bootstrap-tab.js"></script>
-   <script src="./bootstrap/js/bootstrap-tooltip.js"></script>
-   <script src="./bootstrap/js/bootstrap-popover.js"></script>
-   <script src="./bootstrap/js/bootstrap-button.js"></script>
-   <script src="./bootstrap/js/bootstrap-collapse.js"></script>
-   <script src="./bootstrap/js/bootstrap-carousel.js"></script>
-   <script src="./bootstrap/js/bootstrap-typeahead.js"></script>
-   <script src="jquery-2.0.2.js"></script>
+   <script src="./jquery-1.9.1.js"></script>
+   <script src="./bootstrap/js/bootstrap.js"></script>
+   <script>
+    $(function ()  
+      {
+      $('#testing').popover(
+      {
+        trigger: 'click',
+        html: true,
+        placement: 'bottom',
+        content: '<div id="myCarousel" class="carousel slide"><ol class="carousel-indicators"><li data-target="#myCarousel" data-slide-to="0" class="active"></li><li data-target="#myCarousel" data-slide-to="1"></li><li data-target="#myCarousel" data-slide-to="2"></li></ol><!-- Carousel items --><div class="carousel-inner"><div class="active item"><img style="max-width:inherit;max-height:50%;" src="./Images/Step1.png"></div><div class="item"><img style="max-width:inherit;max-height:50%;" src="./Images/Step2.png"></div><div class="item"><img style="max-width:inherit;max-height:70%;" src="http://placekitten.com/300/201"></div></div><!-- Carousel nav --><a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a><a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a></div>'
+ }
+)});
+  </script>
 
  </body>
 </html>

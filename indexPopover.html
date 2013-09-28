@@ -1,0 +1,228 @@
+<!-- HackTheChange 2013 Web Portal -->
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <title>Job-Seeking 2.0</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+   <!-- Le styles -->
+   <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
+   <link href="./bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+   <!--[if lt IE 9]>
+     <script src="../assets/js/html5shiv.js"></script>
+   <![endif]-->
+
+   <!-- Fav and touch icons -->
+   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="../assets/ico/favicon.png">
+ </head>
+ <body>
+
+<!-- Main Menu Buttons -->
+<div class="container">
+	<div class="row">
+
+		<!-- Main Menu Text -->
+		<div class="span4"> 
+ 			<div id="text">
+
+				<form class="form-inline" role="form">
+					<div class="form-group">
+				    	<input type="text" class="form-control" id="job_search" placeholder="Search by job name"></input>
+				    	<button type="submit" class="btn btn-default" onclick="shiftPageDown()">Search</button>
+				 	</div> 
+ 				</form>
+			    <h1 style="font-size:350%;font-weight:bold;opacity:0.2">TRABALHO</h1>
+			    <h1 style="font-size:350%;font-weight:bold;opacity:0.2">PERFEITO</h1>
+			    <h1 style="font-size:350%;font-weight:normal;opacity:0.2">PARA SUAS</h1>
+			    <h1 style="font-size:350%;font-weight:normal;opacity:0.2">HABILIDADES</h1>
+			    <br>
+			    <br>
+			    <h2 style="opacity:0.2">Clique na imagem</h2>
+			    <h2 style="opacity:0.2">para começar &#187;</h2>
+			</div>
+		</div>
+		<div class="span4">
+		
+			<h1 id="all_jobtitle"></h1>
+			
+			<h1 style="display:inline-block; margin-right:4%;"><a href="#" id="all_jobtitle1" class="job_title">Job Title</a></h1>
+			<a href="#" class="btn btn-danger" id="testing" data-toggle="popover" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">Preview</a>
+			<p id="all_company1" class="job_text">Company</p>
+			<p id="all_jobdescription1" class="job_text">Job Description</p>
+			
+			<h1 style="display:inline-block; margin-right:4%;"><a href="#" id="all_jobtitle2" class="job_title">Job Title</a></h1>
+			<button style="display:inline-block;" class="btn btn-danger">Preview</button>
+			<p id="all_company2" class="job_text">Company</p>
+			<p id="all_jobdescription2" class="job_text">Job Description</p>
+			
+			<h1 style="display:inline-block; margin-right:4%;"><a href="#" id="all_jobtitle3" class="job_title">Job Title</a></h1>
+			<button style="display:inline-block;" class="btn btn-danger">Preview</button>
+			<p id="all_company3" class="job_text">Company</p>
+			<p id="all_jobdescription3" class="job_text">Job Description</p>
+
+		
+		</div>
+		<div class="span4">
+		
+		  <div id="nav" class="tabbable tabs-right">
+		    <ul class="nav nav-tabs">
+		      <li onclick="shiftPageInit('Agricultura')">
+		        <div>
+		          <img style="height:20%;width:20%;float:left;" src='Images/pasture.jpg'>
+		          <a href="#">Agricultura</a>
+		        </div>
+		      </li>
+		      <li onclick="shiftPageInit('Telemarketing')">
+		        <div>
+		          <img style="height:20%;width:20%;float:left;" src='Images/call-center.jpeg'>
+		          <a href="#">Telemarketing</a>
+		        </div>
+		      </li>
+		      <li onclick="shiftPageInit('Hotelaria')">
+		        <div>
+		          <img style="height:20%;width:20%;float:left;" src='Images/beach.jpg'>
+		          <a href="#">Hotelaria</a>
+		        </div>
+		      </li>
+		      <li onclick="shiftPageInit('')">
+		        <div>
+		          <img style="height:20%;width:20%;float:left;" src='Images/receptionist.jpg'>
+		          <a href="#">Administração</a>
+		        </div>
+		      </li>
+		       <li onclick="shiftPageInit('Back')">
+		        <div>
+		          <img style="height:20%;width:20%;float:left;" src='Images/commercial.jpeg'>
+		          <a href="#">Comercial</a>
+		        </div>
+		      </li>
+		       <li onclick="shiftPageInit('Back')">
+		        <div>
+		          <img style="height:20%;width:20%;float:left;" src='Images/construction.jpg'>
+		          <a href="#">Construção</a>
+		        </div>
+		      </li>
+		      <li onclick="shiftPageInit('Back')">
+		        <div>
+		          <img style="height:20%;width:20%;float:left;" src='Images/doctor.jpg'>
+		          <a href="#">Health</a>
+		        </div>
+		      </li>
+		      <li onclick="shiftPageInit('Back')">
+		        <div>
+		          <img style="height:20%;width:20%;float:left;" src='Images/back-arrow.png'>
+		          <a href="#">Back</a>
+		        </div>
+		      </li>
+		    </ul>
+		  </div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Stuff still to incorporate -->
+
+
+
+ <div id="info" style="position:absolute;left:150%;top:10%;transition:1s;width:30%;">
+
+    <div class="container">
+
+      <div class="row">
+        <div class="span3">
+          <img src='' id="img1">
+          <a href="#" onclick="shiftChangeCategory(1)" id="capt1"></a>
+
+          <img src='' id="img2">
+          <a href="#" onclick="shiftChangeCategory(2)" id="capt2"></a>
+        </div>
+      
+      <div class="row">  
+        <div class="span3">
+          <img src='' id="img3"> 
+          <a href="#" onclick="shiftChangeCategory(3)" id="capt3"></a>
+          <img src='' id="img4"> 
+          <a href="#" onclick="shiftChangeCategory(4)" id="capt4"></a>
+        </div>
+
+      </div>  
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+
+<!-- Job Specific Details -->
+  <div id="details" style="position:absolute;left:150%;top:10%;transition:1s;width:30%;">
+
+    <div class="container">
+      <div class="row">
+        <div class="span3">
+            <h1 id="job_title"></h1>
+            <img style="height:90%;width:90%" src='' id="job_picture">
+            <span class="label label-warning" style="background-color: rgb(70, 136, 71); color: rgb(255, 255, 255); padding: 3px 4px 3px; font-size: 12px;">Typical Salary Range</span>
+            <span class="label label-warning" style="background-color: rgb(58, 135, 173); color: rgb(255, 255, 255); padding: 3px 4px 3px; font-size: 12px;">Required Job Skills</span>
+            <span class="label label-warning" style="background-color: rgb(248, 148, 6); color: rgb(255, 255, 255); padding: 3px 4px 3px; font-size: 12px;">Required Experience</span>
+            <p id="job_description">[ Brief overview of occupation- common tasks, settings, payment structure, job stability ]</p>
+        </div>
+
+        <div class="span5">
+            <h1 style="display:inline-block; margin-right:4%;"><a href="#" id="jobtitle1" class="job_title">Job Title</a></h1>
+            <button style="display:inline-block;" class="btn btn-danger" onclick="displayPopup()">Preview</button>
+            <p id="company1" class="job_text">Company</p>
+            <p id="jobdescription1" class="job_text">Job Description</p>
+
+            <h1 style="display:inline-block; margin-right:4%;"><a href="#" id="jobtitle2" class="job_title">Job Title</a></h1>
+            <button style="display:inline-block;" class="btn btn-danger" onclick="displayPopup()">Preview</button>
+            <p id="company2" class="job_text">Company</p>
+            <p id="jobdescription2" class="job_text">Job Description</p>
+
+            <h1 style="display:inline-block; margin-right:4%;"><a href="#" id="jobtitle3" class="job_title">Job Title</a></h1>
+            <button style="display:inline-block;" class="btn btn-danger" onclick="displayPopup()">Preview</button>
+            <p id="company3" class="job_text">Company</p>
+            <p id="jobdescription3" class="job_text">Job Description</p>
+        </div>
+      </div>
+      </div> 
+    </div>
+  </div>
+  
+<!-- End stuff to incorporate -->
+
+
+
+
+   <!-- Le javascript
+   ================================================== -->
+   <!-- Placed at the end of the document so the pages load faster -->
+   
+   <!-- <script src = "spin.js"></script> -->
+   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+   <script src="./bootstrap/js/bootstrap.js"></script>
+   <script>
+		$(function ()  
+		{
+		  $('#testing').popover(
+		  {
+		     trigger: 'click',
+		     html: true,
+		     placement: 'right'
+		  });
+		});
+	</script>
+
+ </body>
+</html>
