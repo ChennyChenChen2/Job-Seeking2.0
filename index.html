@@ -27,30 +27,48 @@
  </head>
  <body>
 
+<!-- Main Menu Buttons -->
+
   <div id="nav" class="tabbable tabs-right" style="width:30%;margin-left:70%;transition:1s;">
     <ul class="nav nav-tabs">
-      <li onclick="shiftPageInit()">
+      <li onclick="shiftPageInit('Agricultura')">
         <div>
-          <img style="height:20%;width:20%;float:left;" src='Images/soccer.jpg'>
-          <a href="#">ESPORTE</a>
+          <img style="height:20%;width:20%;float:left;" src='Images/pasture.jpg'>
+          <a href="#">Agricultura</a>
         </div>
       </li>
-      <li onclick="shiftPageInit()">
+      <li onclick="shiftPageInit('Telemarketing')">
         <div>
-          <img style="height:20%;width:20%;float:left;" src='Images/technology.jpg'>
-          <a href="#">TECNOLOGIA</a>
+          <img style="height:20%;width:20%;float:left;" src='Images/call-center.jpeg'>
+          <a href="#">Telemarketing</a>
         </div>
       </li>
-      <li onclick="shiftPageInit()">
+      <li onclick="shiftPageInit('Hotelaria')">
         <div>
-          <img style="height:20%;width:20%;float:left;" src='Images/audiovisual.jpg'>
-          <a href="#">AUDIOVISUAL</a>
+          <img style="height:20%;width:20%;float:left;" src='Images/beach.jpg'>
+          <a href="#">Hotelaria</a>
+        </div>
+      </li>
+       <li onclick="shiftPageInit('Back')">
+        <div>
+          <img style="height:20%;width:20%;float:left;" src='Images/back-arrow.png'>
+          <a href="#">Back</a>
         </div>
       </li>
     </ul>
   </div>
-
+<!-- Main Menu Text -->
+  
   <div id="text" style="position:absolute;left:10%;transition:1s;">
+
+<form class="form-inline" role="form">
+      
+  <div class="form-group">
+    <input type="text" class="form-control" id="job_search" placeholder="Search by job name"></input>
+    <button type="submit" class="btn btn-default" onclick="shiftPageDown()">Search</button>
+
+  </div>
+</form>
    <h1 style="font-size:350%;font-weight:bold;opacity:0.2">TRABALHO</h1>
    <h1 style="font-size:350%;font-weight:bold;opacity:0.2">PERFEITO</h1>
    <h1 style="font-size:350%;font-weight:normal;opacity:0.2">PARA SUAS</h1>
@@ -61,9 +79,63 @@
    <h2 style="opacity:0.2">para começar &#187;</h2>
  </div>
 
+
+
   <div id="info" style="position:absolute;left:150%;top:10%;transition:1s;width:30%;">
-    <h2 id="placeholder"></h2>
-    <img id="placeholderImg" src='Images/logochef.png'>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="span3">
+          <img src='' id="img1">
+          <a href="#" onclick="shiftChangeCategory(1)" id="capt1"></a>
+
+          <img src='' id="img2">
+          <a href="#" onclick="shiftChangeCategory(2)" id="capt2"></a>
+        </div>
+      
+      <div class="row">  
+        <div class="span3">
+          <img src='' id="img3"> 
+          <a href="#" onclick="shiftChangeCategory(3)" id="capt3"></a>
+          <img src='' id="img4"> 
+          <a href="#" onclick="shiftChangeCategory(4)" id="capt4"></a>
+        </div>
+
+      </div>  
+      </div>
+    </div>
+  </div>
+
+<!-- Job Specific Details -->
+  <div id="details" style="position:absolute;left:150%;top:10%;transition:1s;width:30%;">
+
+    <div class="container">
+      <div class="row">
+        <div class="span3">
+            <img style="height:90%;width:90%" src='' id="job_picture">
+            <span class="label label-warning" style="background-color: rgb(70, 136, 71); color: rgb(255, 255, 255); padding: 3px 4px 3px; font-size: 12px;">Typical Salary Range</span>
+            <span class="label label-warning" style="background-color: rgb(58, 135, 173); color: rgb(255, 255, 255); padding: 3px 4px 3px; font-size: 12px;">Required Job Skills</span>
+            <span class="label label-warning" style="background-color: rgb(248, 148, 6); color: rgb(255, 255, 255); padding: 3px 4px 3px; font-size: 12px;">Required Experience</span>
+            <p id="job_description">[ Brief overview of occupation- common tasks, settings, payment structure, job stability ]</p>
+        </div>
+
+        <div class="span5">
+            <h1><a href="#" id="jobtitle1" class="job_title">Job Title</a></h1>
+            <p id="company1" class="job_text">Company</p>
+            <p id="jobdescription1" class="job_text">Job Description</p>
+
+            <h1><a href="#" id="jobtitle2" class="job_title">Job Title</a></h1>
+            <p id="company2" class="job_text">Company</p>
+            <p id="jobdescription2" class="job_text">Job Description</p>
+
+            <h1><a href="#" id="jobtitle3" class="job_title">Job Title</a></h1>
+            <p id="company3" class="job_text">Company</p>
+            <p id="jobdescription3" class="job_text">Job Description</p>
+        </div>
+      </div>
+      </div> 
+    </div>
   </div>
 
 
@@ -86,6 +158,7 @@
    <script src="./bootstrap/js/bootstrap-collapse.js"></script>
    <script src="./bootstrap/js/bootstrap-carousel.js"></script>
    <script src="./bootstrap/js/bootstrap-typeahead.js"></script>
+   <script src="jquery-2.0.2.js"></script>
 
  </body>
 </html>

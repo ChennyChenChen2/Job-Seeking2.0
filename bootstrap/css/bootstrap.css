@@ -6165,3 +6165,10 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
+
+.job_title{
+  font-size: 20px;	
+}
+.job_text{
+
+}
